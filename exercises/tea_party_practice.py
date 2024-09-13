@@ -3,24 +3,19 @@
 __author__: str = "730472090"
 
 
-# Have to define tea_count and treat_count here and set them equal
-# to a value we have or give the function before running.
-# Convert the cost to string so the $ can be added to the final answer
-
-
 def main_planner(guests: int) -> None:
     """Main planner combines all of the following functions into one
     that allows for easy use"""
     print("A Cozy Tea Party for " + str(guests) + " people!")
     print("tea bags: " + str(tea_bags(people=guests)))
     print("treats: " + str(treats(people=guests)))
-    print(
-        "Cost: "
-        + "$"
-        + str(
-            cost(tea_count=tea_bags(people=guests), treat_count=treats(people=guests))
-        )
-    )
+    print("Cost: " + "$" + str(cost(tea_count=tea_bags(), treat_count=treats)))
+    """Main planner combines all of the following functions into
+      one that allows for easy use"""
+
+
+# Have to set people=guests since people is used in other functions
+# Convert the cost to string so the $ can be added to the final answer
 
 
 def tea_bags(people: int) -> int:
@@ -31,7 +26,7 @@ def tea_bags(people: int) -> int:
 def treats(people: int) -> int:
     """Treats function used to determine how many treats people will want, based on
     the amount of tea they are given"""
-    return int(tea_bags(people=people) * 1.5)
+    return int(tea_bags(people) * 1.5)
 
 
 def cost(tea_count: int, treat_count: int) -> float:

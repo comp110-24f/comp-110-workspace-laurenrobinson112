@@ -1,3 +1,5 @@
+"""EX02, creating a wordle game to practice while loops and if/else statements"""
+
 __author__ = "730472090"
 
 
@@ -30,13 +32,14 @@ def contains_char(word: str, letter: str) -> None:
             count = count + 1
         index += 1  # Increasing index to avoid infinite loop
 
-    if count > 0:  # put if statement out here so it won't print every time loops runs
+    if count > 0:
+        # put if statement even with while so it won't print every time loops runs
         if count == 1:
-            print(str(count) + " instance of " + letter + " in " + word)
+            print(str(count) + " instance of " + letter + " found in " + word)
         else:
             print(str(count) + " instances of " + letter + " found in " + word)
     else:
-        print("No instances of " + letter + " in " + word)
+        print("No instances of " + letter + " found in " + word)
 
 
 def main() -> None:
@@ -45,7 +48,7 @@ def main() -> None:
     contains_char(word, letter)
 
 
-# setting my variables equal so that all functions will be called
+# setting variables equal so that all functions will be called
 
 if __name__ == "__main__":
     main()
